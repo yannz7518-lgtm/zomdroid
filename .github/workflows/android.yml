@@ -2,9 +2,10 @@ name: Android CI
 
 on:
   push:
-    branches: [ "keyboard-experimental" ]
+    branches: [ "keyboard-experimental", "pz-build33-experimental" ]
   pull_request:
-    branches: [ "keyboard-experimental" ]
+    branches: [ "keyboard-experimental", "pz-build33-experimental" ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -12,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          submodules: recursive  
+          submodules: recursive
 
       - name: Set up JDK
         uses: actions/setup-java@v4
